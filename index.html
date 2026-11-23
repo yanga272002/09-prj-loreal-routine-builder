@@ -44,7 +44,17 @@
 
       <!-- Selected Products -->
       <div class="selected-products">
-        <h2>Selected Products</h2>
+        <div class="selected-products-header">
+          <h2>Selected Products</h2>
+          <button
+            type="button"
+            id="clearAllBtn"
+            class="clear-all-btn hidden"
+            aria-label="Clear all selected products"
+          >
+            <i class="fa-regular fa-trash-can"></i> Clear All
+          </button>
+        </div>
         <div id="selectedProductsList"></div>
         <button id="generateRoutine" class="generate-btn">
           <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
@@ -83,6 +93,44 @@
           <a href="#">Contact</a>
         </nav>
       </footer>
+    </div>
+
+    <!-- Product Details Modal Window (Accessible dialog) -->
+    <div
+      id="productModal"
+      class="modal-backdrop hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-container">
+        <button
+          type="button"
+          class="modal-close-btn"
+          id="modalCloseBtn"
+          aria-label="Close product details"
+        >
+          &times;
+        </button>
+        <div class="modal-content">
+          <div class="modal-image-wrapper">
+            <img id="modalImg" src="" alt="" class="modal-image" />
+          </div>
+          <div class="modal-details">
+            <span id="modalBrand" class="modal-brand"></span>
+            <h3 id="modalTitle" class="modal-title"></h3>
+            <span id="modalCategory" class="modal-category"></span>
+            <div class="modal-description-wrapper">
+              <h4>Description &amp; Formula</h4>
+              <p id="modalDescription" class="modal-description"></p>
+            </div>
+            <button type="button" id="modalSelectBtn" class="modal-select-btn">
+              Add to Routine
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
